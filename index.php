@@ -17,7 +17,7 @@ Autoloader::register();
             <h2>Accès administrateur</h2>
         </div>
         <div class="col-sm-6">
-            <a href="indexFront.php"><img class="img-circle img-responsive img-center user" alt=""></a>
+            <a href="connecter.php"><img class="img-circle img-responsive img-center user" alt=""></a>
             <h2>Accès utilisateur</h2>
         </div>
     </div>

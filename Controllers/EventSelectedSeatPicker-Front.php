@@ -14,14 +14,10 @@ Autoloader::register();
 
 $returnMessage = '';
 
-//Récupération des numéros de places choisi
+
 $selectedSeat = $_POST['selectedSeat'];
 $tabSelectedSeat = explode(",", $selectedSeat);
-//Récupération de l'id de l'event
 $idEvent = $_SESSION['idEvent'];
-//Récupération du nom de la personne
-$nomPersonne = $_POST['nomPersonne'];
-//Récupération du prénom de la personne
 $prenomPersonne = $_POST['prenomPersonne'];
 //Récupération du mail de la personne
 $mailPersonne = $_POST['mailPersonne'];

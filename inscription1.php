@@ -1,4 +1,5 @@
 <?php
+include "evenement.php";
 try{
   // On se connecte � MySQL
 	$bdd = new PDO('mysql:host=localhost;dbname=reservation;charset=utf8', 'root', 'password');

@@ -53,6 +53,19 @@ CREATE TABLE IF NOT EXISTS `event` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
+-- Structure de la table `eventext`
+--
+
+CREATE TABLE IF NOT EXISTS `eventext` (
+`idEventext` int(11) NOT NULL,
+  `titreEventext` varchar(25) DEFAULT NULL,
+  `dateEventext` date DEFAULT NULL,
+  `idTypeevent` int(11) DEFAULT NULL,
+  `idlieuevent` int(255) NOT NULL,
+
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
 
 --
 -- Structure de la table `participer`
@@ -66,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `participer` (
 
 -- --------------------------------------------------------
 
+
 --
 -- Structure de la table `personne`
 --
@@ -75,6 +89,23 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `nomPersonne` varchar(25) DEFAULT NULL,
   `PrenomPersonne` varchar(25) DEFAULT NULL,
   `mailPersonne` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+-- --------------------------------------------------------
+-- --------------------------------------------------------
+
+
+--
+-- Structure de la table `client`
+--
+
+CREATE TABLE IF NOT EXISTS `client` (
+`idcli` int(11) NOT NULL,
+  `nom_cli` varchar(25) DEFAULT NULL,
+  `Prenom_cli` varchar(25) DEFAULT NULL,
+  `sexe_cli` varchar(25) DEFAULT NULL,
+  `age_cli` char(25) DEFAULT NULL,
+  `demand_cli` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
@@ -89,6 +120,25 @@ CREATE TABLE IF NOT EXISTS `salle` (
   `nomSalle` varchar(255) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `lieu`
+--
+
+------------------------------------------------------
+
+--
+-- Structure de la table `products`
+--
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `IDProduct` int(11) NOT NULL AUTO_INCREMENT,
+  `NameProduct` varchar(255) NOT NULL,
+  `PriceProduct` float NOT NULL,
+  `StockProduct` int(11) NOT NULL,
+  PRIMARY KEY (`IDProduct`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Contenu de la table `salle`
 --
@@ -98,6 +148,15 @@ INSERT INTO `salle` (`idSalle`, `nbPlaces`, `nomSalle`) VALUES
 (2, 180, 'Grande');
 
 -- --------------------------------------------------------
+-- Contenu de la table `lieu`
+--
+
+
+-- --------------------------------------------------------
+-- Structure de la table `localisation`
+--
+
+
 
 --
 -- Structure de la table `typeevent`
@@ -111,7 +170,6 @@ CREATE TABLE IF NOT EXISTS `typeevent` (
 --
 -- Contenu de la table `typeevent`
 --
-
 INSERT INTO `typeevent` (`idType`, `libelleType`) VALUES
 (1, 'Spectacle'),
 (2, 'Concert'),

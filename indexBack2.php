@@ -9,7 +9,7 @@ Autoloader::register();
 // Redirige l'utilisateur s'il est déjà identifié
 if(isset($_COOKIE["id"]))
 {
-     header("Location: indexBack2.php");
+     header("Location: evenement.php");
 }
 else
 {
@@ -45,8 +45,8 @@ else
                
                // Connexion à la base de données
                // Valeurs à modifier selon vos paramètres configuration
-                mysql_connect("localhost", "root", "password");
-               mysql_select_db("reservation");
+        mysql_connect("localhost", "root", "password");
+        mysql_select_db("reservation");
                
                // Vérification de l'unicité du nom d'utilisateur et de l'adresse e-mail
                $result = mysql_query("SELECT nom, email,  FROM inscription WHERE nom = '" . $_POST["nom"] . "' OR email = '" . $_POST["email"] . "'");
@@ -219,17 +219,6 @@ else
 			    			</div>
 			    			
 			    			<input type="submit" value="S'enregistrer" class="btn btn-info btn-block">
-							 
-									<div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="connecter.php" tabindex="5" class="forgot-password">Log In
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
 			    		
 			    		</form>
 			    	</div>

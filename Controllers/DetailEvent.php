@@ -5,14 +5,6 @@ session_start();
 require '../Autoloader.php';
 Autoloader::register();
 
-//Exception dependencies autoload not ok
-if (!file_exists(__DIR__ . '/../vendor/autoload.php')) {
-	 throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
-}
-//Utilisation de l'autoloader composer 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-
 //Si l'utilisateur a bien choisi un event dans la liste -listeEvent.php- et cliqué sur valider
  if (isset($_POST['ChoixEvent'], $_POST['ValiderChoixEvent'])) {
 	
