@@ -8,8 +8,9 @@
 require '../Autoloader.php';
 Autoloader::register();
 $Events = new Event();
-$tabEvent = $Events->getListeEventJson();
+$tabEventExt = $Events->getListeEventJson();
 
 //On force le format JSON
 header('Content-type: application/json');
-echo $tabEvent;
+echo $tabEventExt
+;

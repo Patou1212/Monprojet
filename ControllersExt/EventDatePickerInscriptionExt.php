@@ -12,11 +12,11 @@ Autoloader::register();
 if(isset($_GET["dataSent"]))
 {
 	$Events = $Events = new Event();
-	$tabEvent = $Events->getListeEvent($_GET["dataSent"]);
+	$tabEventExt = $Events->getListeEvent($_GET["dataSentExt"]);
 	$jsonDate = array();
-	foreach ($tabEvent as $event) {
-        $nbPlaceRestante = $Events->getNbPlaceRestante($event->idEvent);
-    	$jsonDate[] = array("dateEvent" => $event->dateEvent , 'titreEvent' => $event->titreEvent , 'nbPlaceEvent' => $nbPlaceRestante, 'libelleType' => $event->libelleType);
+	foreach ($tabEventExt as $eventExt) {
+        $nbPlaceRestante = $Events->getNbPlaceRestante($eventExt->idEventExt);
+    	$jsonDate[] = array("dateEvenExt" => $eventExt->dateEventExt , 'titreEventExt' => $eventExt->titreEventExt , 'nbPlaceEventExt' => $nbPlaceRestanteExt, 'libelleTypeExt' => $eventExt->libelleTypeExt);
 	}
 	echo json_encode($jsonDate);
 }
