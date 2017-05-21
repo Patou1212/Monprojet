@@ -129,7 +129,8 @@ class Event
      */
     public function getListeEventJson()
     {
-        $selectEvent = "SELECT dateEvent,titreEvent,libelleType,idEvent FROM event,typeevent WHERE event.idType = typeevent.idType ORDER BY dateEvent,libelleType";
+        $selectEvent = "SELECT dateEvent,titreEvent,libelleType,idEvent FROM event,typeevent 
+        WHERE event.idType = typeevent.idType ORDER BY dateEvent,libelleType";
         $requestEvent = $this->cnx->query($selectEvent);
         $tabEvent = array();
         while ($repEvent = $requestEvent->fetchObject()) {

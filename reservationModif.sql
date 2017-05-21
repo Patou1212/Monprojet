@@ -83,7 +83,6 @@ CREATE TABLE IF NOT EXISTS `participer` (
 --
 -- Structure de la table `personne`
 --
-
 CREATE TABLE IF NOT EXISTS `personne` (
 `idPersonne` int(11) NOT NULL,
   `nomPersonne` varchar(25) DEFAULT NULL,

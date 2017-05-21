@@ -11,8 +11,16 @@ catch(Exception $e)
 	die('Erreur : '.$e->getMessage());
 }
 
-$bdd->exec( 'SELECT id FROM inscription WHERE nom= :nom, prenom= :prenom, password= :password' );
-echo'validation'
+$bdd->exec( 'SELECT * FROM inscription WHERE nom= :nom, prenom= :prenom, password= :password' );
+$datas = array($nom,$prenom, $password);
+try{
+   $prep= $bdd->prepare($bdd);
+   $prep->execute($datas);
+   $a_result = $prep->fetchAll();
+   $nbResult =  !empty($a_result) ? count($a_result) : 0;
+}catch(Exception $e){
+  echo " Erreur : " . $e->getMessage();
+}
 
 
 
