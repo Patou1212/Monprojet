@@ -15,13 +15,13 @@ foreach ($tabEventExt as $eventExt) {
 }
 
 //On verifie que tous les champs ont été remplis, et que l'utilisateur a cliqué sur 'Valider'
-if (isset($_POST['TitreEvent'], $_POST['inputDate'], $_POST['TypeEvent'], $_POST['ValiderCreationEventExt'])) {
+if (isset($_POST['TitreEventExt'], $_POST['dateEventExt'], $_POST['idTypeExt'], $_POST['idlieuExt'], $_POST['ValiderCreationEventExt'])) {
 
     // on stocke dans des variables les infos rentrés par l'utilisateur
-    $titre = $_POST['TitreEvent'];
-    $date = $_POST['inputDate'];
-    $type = $_POST['TypeEvent'];
-    $salle = $_POST['TypeSalle'];
+    $titre = $_POST['TitreEventExt'];
+    $date = $_POST['dateEventExt'];
+    $type = $_POST['idTypeExt'];
+    $lieu = $_POST['idlieuExt'];
 
 
     // si on inclue une affiche à l'événement

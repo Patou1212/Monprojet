@@ -14,7 +14,7 @@ include '../Assets/includes/frontOffice/header-f.php';
 
             <div class="row">
                 <div class="col-lg-12">
-                    <form class="form-horizontal" action="../Controllers/actualiseEvent.php" method="post">
+                    <form class="form-horizontal" action="../ControllersExt/actualiseEventExt.php" method="post">
                         <fieldset>
                             <!-- Form Name -->
                             <legend><h1 id='listEvent'>Liste des événements disponibles</h1></legend>

@@ -51,7 +51,7 @@ include '../Assets/includes/frontOffice/header-f.php';
                         <div class="col-md-8">
                             <input id="ValiderParticipation" name="ValiderParticipation" type="submit"
                                    class="btn btn-success" />
-                            <a href="../Controllers/ListeEventClient.php" class="btn btn-danger"
+                            <a href="../ControllersExt/ListeEventClientExt .php" class="btn btn-danger"
                                role="button">Retour</a>
                         </div>
                     </div>

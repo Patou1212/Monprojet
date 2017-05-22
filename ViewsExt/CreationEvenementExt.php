@@ -40,25 +40,34 @@ include '../Assets/includes/backOffice/header-b.php';
 
                     <!-- DatePicker -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="TitreEventExt">Date de votre événement</label>
+                        <label class="col-md-4 control-label" for="dateEventExt">Date de votre événement</label>
 
                         <div class="col-md-4" id="datepicker"><input type="text" hidden value="" id="inputDate"
                                                                      name="inputDate"/></div>
 
                     </div>
-             
-                    <!-- Upload File -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="affiche">Sélection de l'affiche</label>
+
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="idTypeExt">Type de L'évenement</label>
                         <div class="col-md-4">
-                            <span class="fileinput-button">
-                                <i class="glyphicon glyphicon-plus"></i>
-                                <span>Choisissez un fichier</span>
-                                <input type="file" size="32" name="uploadAffiche" value="">
-                                <input type="hidden" name="upload" value="simple"/>
-                            </span>
+                            <input id="idTypeExt" name="idTypeExt" placeholder="Type de votre événement"
+                                   class="form-control input-md" required="" type="text"
+                                   onblur="this.value=this.value.Majuscule()">
+
                         </div>
                     </div>
+
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="idlieuExt">Lieu de L'évenement</label>
+                        <div class="col-md-4">
+                            <input id="idlieuExt" name="idlieuExt" placeholder="Lieu de votre événement"
+                                   class="form-control input-md" required="" type="text"
+                                   onblur="this.value=this.value.Majuscule()">
+
+                        </div>
+                    </div>
+             
+                
 
                     <!-- Button -->
                     <div class="form-group">
