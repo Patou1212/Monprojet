@@ -57,9 +57,9 @@ CREATE TABLE IF NOT EXISTS `eventExt` (
   `titreEventExt` varchar(25) DEFAULT NULL,
   `dateEventExt` date DEFAULT NULL,
   `idTypeExt` int(11) DEFAULT NULL,
-  `idlieuExt` int(255) NOT NULL,
+  `idlieuExt` int(255) NOT NULL
 
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4;
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `participer` (
 
 CREATE TABLE IF NOT EXISTS `demander` (
   `idEventExt` int(11) NOT NULL,
-  `idClient` int(11) NOT NULL,
+  `id_Cli` int(11) NOT NULL,
   `adrLieu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `salle` (
 --
 -- Structure de la table `lieu`
 CREATE TABLE IF NOT EXISTS `Lieu` (
-`idLieu` int(255) NOT NULL,
+`idLieuExt` int(255) NOT NULL,
   `adrLieu` int(255) NOT NULL,
   `superficieLieu` int(255) NOT NULL,
   `nomLieu` varchar(255) NOT NULL
@@ -198,7 +198,7 @@ ALTER TABLE `event`
 -- Index pour la table `eventExt`
 --
 ALTER TABLE `eventExt`
- ADD PRIMARY KEY (`idEventExt`), ADD KEY `FK_EventExt_idTypeExt` (`idTypeExt`), ADD KEY `FK_EventExt_idLieu` (`idLieu`);
+ ADD PRIMARY KEY (`idEventExt`), ADD KEY `FK_EventExt_idTypeExt` (`idTypeExt`), ADD KEY `FK_EventExt_idLieuExt` (`idLieuExt`);
 
 --
 -- Index pour la table `participer`
@@ -218,6 +218,11 @@ ALTER TABLE `demander`
 ALTER TABLE `personne`
  ADD PRIMARY KEY (`idPersonne`);
 
+-- Index pour la table ``
+--
+ALTER TABLE `inscription`
+ ADD PRIMARY KEY (`idInscription`);
+
 --Index pour la table `Client`
 --
 ALTER TABLE `client`
@@ -232,14 +237,20 @@ ALTER TABLE `salle`
 --
 -- Index pour la table `lieu`
 --
-ALTER TABLE `lieu`
- ADD PRIMARY KEY (`idLieu`);
+ALTER TABLE `Lieu`
+ ADD PRIMARY KEY (`idLieuExt`);
 
 --
 -- Index pour la table `typeevent`
 --
 ALTER TABLE `typeevent`
  ADD PRIMARY KEY (`idType`);
+
+-- Index pour la table `typeeventExt`
+--
+ALTER TABLE `typeeventExt`
+ ADD PRIMARY KEY (`idTypeExt`);
+
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -275,8 +286,8 @@ MODIFY `idSalle` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 
 -- AUTO_INCREMENT pour la table `lieu`
 --
-ALTER TABLE `lieu`
-MODIFY `idLieu` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+ALTER TABLE `Lieu`
+MODIFY `idLieuExt` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `typeevent`
 --
@@ -304,7 +315,7 @@ ADD CONSTRAINT `FK_event_idSalle` FOREIGN KEY (`idSalle`) REFERENCES `salle` (`i
 --
 ALTER TABLE `eventExt`
 ADD CONSTRAINT `FK_EventExt_idTypeExt` FOREIGN KEY (`idTypeExt`) REFERENCES `typeeventExt` (`idTypeExt`),
-ADD CONSTRAINT `FK_eventExt_idLieu` FOREIGN KEY (`idLieu`) REFERENCES `lieu` (`idLieu`);
+ADD CONSTRAINT `FK_eventExt_idLieu` FOREIGN KEY (`idLieuExt`) REFERENCES `Lieu` (`idLieuExt`);
 --
 -- Contraintes pour la table `participer`
 --
